@@ -11,9 +11,9 @@ defmodule Phoenix.Router.ConsoleFormatterTest do
   end
 
   test "format multiple routes" do
-    assert draw(RouterTestSingleRoutes) == ["        page  GET     /        Pages#index",
-                                            "upload_image  POST    /images  Images#upload",
-                                            "remove_image  DELETE  /images  Images#destroy"]
+    assert draw(RouterTestSingleRoutes) == ["        page  GET     /        Phoenix.Controllers.Pages#index",
+                                            "upload_image  POST    /images  Phoenix.Controllers.Images#upload",
+                                            "remove_image  DELETE  /images  Phoenix.Controllers.Images#destroy"]
   end
 
   defmodule RouterTestResources do
@@ -23,14 +23,14 @@ defmodule Phoenix.Router.ConsoleFormatterTest do
   end
 
   test "format resource routes" do
-    assert draw(RouterTestResources) == ["    images  GET     images           Images#index",
-                                         "edit_image  GET     images/:id/edit  Images#edit",
-                                         "     image  GET     images/:id       Images#show",
-                                         " new_image  GET     images/new       Images#new",
-                                         "            POST    images           Images#create",
-                                         "            PUT     images/:id       Images#update",
-                                         "            PATCH   images/:id       Images#update",
-                                         "            DELETE  images/:id       Images#destroy"]
+    assert draw(RouterTestResources) == ["    images  GET     images           Phoenix.Controllers.Images#index",
+                                         "edit_image  GET     images/:id/edit  Phoenix.Controllers.Images#edit",
+                                         "     image  GET     images/:id       Phoenix.Controllers.Images#show",
+                                         " new_image  GET     images/new       Phoenix.Controllers.Images#new",
+                                         "            POST    images           Phoenix.Controllers.Images#create",
+                                         "            PUT     images/:id       Phoenix.Controllers.Images#update",
+                                         "            PATCH   images/:id       Phoenix.Controllers.Images#update",
+                                         "            DELETE  images/:id       Phoenix.Controllers.Images#destroy"]
   end
 
   defp draw(router) do

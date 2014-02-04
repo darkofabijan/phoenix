@@ -34,7 +34,7 @@ defmodule Phoenix.Router.ConsoleFormatter do
     [method_len, path_len, route_name_len] = column_widths
 
     controller_name = String.replace(to_string(controller),
-    to_string(project_module.Controllers) <> ".",
+    to_string(Elixir) <> ".",
     "")
 
     String.rjust(to_string(route_name), route_name_len) <> "  " <>
