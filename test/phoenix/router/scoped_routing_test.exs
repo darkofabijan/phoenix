@@ -190,6 +190,10 @@ defmodule Phoenix.Router.ScopedRoutingTest do
     assert RouterHelperScoping.admin_user_path(id: 88) == "/admin/users/88"
   end
 
+  test "double helper scope edit action" do
+    assert RouterHelperScoping.edit_api_v1_account_path(id: 88) == "/api/v1/accounts/88/edit"
+  end
+
   test "double helper scope" do
     assert RouterHelperScoping.api_v1_account_subscription_path(account_id: 12, id: 88) ==
       "/api/v1/accounts/12/subscriptions/88"
